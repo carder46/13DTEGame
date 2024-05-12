@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dd432xdm8lbhs"]
+
+[ext_resource type="Texture2D" uid="uid://drcyp5vy73gn6" path="res://Jungle/Layers/tileset.png" id="1_mpaur"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Tileset" type="Sprite2D" parent="."]
+position = Vector2(344, 550)
+texture = ExtResource("1_mpaur")
