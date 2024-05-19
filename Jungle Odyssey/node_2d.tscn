@@ -174,7 +174,7 @@ position = Vector2(213, 43)
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_x2c2h")
 format = 2
-layer_0/tile_data = PackedInt32Array(327695, 327681, 5, 327694, 196609, 5, 327693, 1114113, 14, 327692, 196609, 5, 327691, 1114113, 14, 327690, 196609, 5, 327689, 1114113, 14, 327688, 1114113, 14, 327687, 196609, 5, 327686, 196609, 5, 327685, 196609, 5, 327684, 1114113, 14, 327683, 196609, 5, 327682, 1114113, 14, 327681, 196609, 5, 327680, 1114113, 14, 393215, 196609, 5, 393214, 1114113, 14, 393213, 1114113, 14, 393212, 1114113, 14, 393211, 1114113, 14, 393210, 196609, 5, 393209, 196609, 5, 393208, 1114113, 14, 393207, 1114113, 14, 393206, 196609, 5, 393205, 1114113, 14, 393204, 65537, 5)
+layer_0/tile_data = PackedInt32Array(327695, 1114113, 14, 327694, 196609, 5, 327693, 1114113, 14, 327692, 196609, 5, 327691, 1114113, 14, 327690, 196609, 5, 327689, 1114113, 14, 327688, 1114113, 14, 327687, 196609, 5, 327686, 196609, 5, 327685, 196609, 5, 327684, 1114113, 14, 327683, 196609, 5, 327682, 1114113, 14, 327681, 196609, 5, 327680, 1114113, 14, 393215, 196609, 5, 393214, 1114113, 14, 393213, 1114113, 14, 393212, 1114113, 14, 393211, 1114113, 14, 393210, 196609, 5, 393209, 196609, 5, 393208, 1114113, 14, 393207, 1114113, 14, 393206, 196609, 5, 393205, 1114113, 14, 393204, 65537, 5, 327696, 1114113, 14, 327699, 1114113, 14, 327698, 1114113, 14, 327697, 1114113, 14, 327701, 196609, 5, 327700, 1114113, 14, 327703, 327681, 5, 327702, 1114113, 14, 327704, 196609, 1, 393241, 65537, 5, 393242, 196609, 1, 458780, 65537, 1, 393243, 196609, 1, 524317, 65537, 1, 589854, 65537, 5, 589855, 196609, 1, 655392, 65537, 1, 720929, 65537, 5, 720930, 327681, 1, 786466, 65537, 5, 786467, 327681, 1, 852003, 65537, 5, 852004, 327681, 5, 852005, 196609, 1, 917543, 65537, 5, 852006, 196609, 1, 917544, 196609, 1, 983081, 65537, 5, 983083, 196609, 1, 983082, 327681, 5, 1048621, 65537, 5, 983084, 196609, 1, 1114161, 1114113, 14, 1114160, 65537, 5, 1048623, 327681, 5, 1048622, 196609, 5, 1114164, 196609, 1, 1114163, 327681, 5, 1114162, 1114113, 14, 1179702, 65537, 5, 1114165, 196609, 1, 1179703, 1114113, 14, 1179705, 196609, 5, 1179704, 1114113, 14, 1179706, 196609, 5, 1179707, 1114113, 14, 1179708, 196609, 5, 1179712, 196609, 5, 1179711, 1114113, 14, 1179710, 1114113, 14, 1179709, 196609, 5, 1179715, 1114113, 14, 1179714, 196609, 5, 1179713, 1114113, 14, 1179716, 327681, 5, 1114180, 327681, 1)
 
 [node name="Player" parent="." instance=ExtResource("2_sbhbp")]
 
@@ -182,13 +182,17 @@ layer_0/tile_data = PackedInt32Array(327695, 327681, 5, 327694, 196609, 5, 32769
 position = Vector2(0, -50)
 limit_left = 0
 limit_top = 0
-limit_bottom = 700
+limit_bottom = 648
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scale = Vector2(0.605, 0.605)
+transform = Transform2D(0.605, 0, 0, 0.605, 0, 0)
 
 [node name="J4" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(1920, 0)
 
 [node name="TextureRect" type="TextureRect" parent="ParallaxBackground/J4"]
 offset_right = 1920.0
@@ -197,6 +201,8 @@ texture = ExtResource("3_ajw65")
 stretch_mode = 1
 
 [node name="J3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.6, 0.6)
+motion_mirroring = Vector2(3840, 0)
 
 [node name="TextureRect" type="TextureRect" parent="ParallaxBackground/J3"]
 offset_right = 40.0
@@ -206,6 +212,8 @@ stretch_mode = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="J2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.7, 0.7)
+motion_mirroring = Vector2(5760, 0)
 
 [node name="TextureRect" type="TextureRect" parent="ParallaxBackground/J2"]
 offset_right = 40.0
@@ -214,9 +222,11 @@ texture = ExtResource("5_ieg6i")
 stretch_mode = 1
 
 [node name="J1" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.8, 0.8)
+motion_mirroring = Vector2(7680, 0)
 
 [node name="TextureRect" type="TextureRect" parent="ParallaxBackground/J1"]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 7680.0
+offset_bottom = 1080.0
 texture = ExtResource("6_ytr5x")
 stretch_mode = 1
