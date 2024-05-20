@@ -11,7 +11,11 @@ var swing : bool = false
 
 @onready var animation_tree = $AnimationTree
 
-
+func set_jumping(val):
+	animation_tree["parameters/conditions/is_jumping"] = val
+	animation_tree["parameters/conditions/is_falling"] = not val
+	animation_tree["parameters/conditions/is_running"] = false
+	animation_tree["parameters/conditions/idle"] = false
 
 
 func _physics_process(delta):
@@ -22,15 +26,25 @@ func _physics_process(delta):
 	# Handle jump.
 	if Input.is_action_just_pressed("Up") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		
 
-
+	
 	var direction = Input.get_axis("Left", "Right")
 	if direction:
 		velocity.x = direction * SPEED
-		set_running(true)
+		if is_on_floor():
+			set_running(true)
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-		set_running(false)
+		if is_on_floor():
+			set_running(false)
+		
+		
+	if velocity.y < 0:
+		set_jumping(true)
+	elif velocity.y > 0:
+		set_jumping(false)	
+
 	move_and_slide()
 
 func _process(delta):
@@ -42,4 +56,6 @@ func _process(delta):
 func set_running(val):
 	animation_tree["parameters/conditions/is_running"] = val
 	animation_tree["parameters/conditions/idle"] = not val
+	animation_tree["parameters/conditions/is_jumping"] = false
+	animation_tree["parameters/conditions/is_falling"] = false
 	
