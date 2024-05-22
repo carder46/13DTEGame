@@ -182,34 +182,6 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_webf6"]
 
-[sub_resource type="Animation" id="Animation_5ff78"]
-length = 0.001
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 1,
-"values": []
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:animation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["new_animation_2"]
-}
-
 [sub_resource type="Animation" id="Animation_lqhxw"]
 length = 0.001
 loop_mode = 1
@@ -322,6 +294,34 @@ tracks/1/keys = {
 "values": ["jump_up"]
 }
 
+[sub_resource type="Animation" id="Animation_5ff78"]
+length = 0.001
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["new_animation_2"]
+}
+
 [sub_resource type="Animation" id="Animation_kfrmv"]
 length = 1.6
 loop_mode = 1
@@ -415,15 +415,17 @@ states/run/position = Vector2(612, 70)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_4ikgp"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_fsia6"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_m7i63"), "idle", "jump_up", SubResource("AnimationNodeStateMachineTransition_a2y3l"), "jump_up", "jump_down", SubResource("AnimationNodeStateMachineTransition_6w62s"), "jump_down", "idle", SubResource("AnimationNodeStateMachineTransition_fnre7"), "jump_down", "run", SubResource("AnimationNodeStateMachineTransition_cy47p"), "run", "jump_up", SubResource("AnimationNodeStateMachineTransition_xpo3j")]
 graph_offset = Vector2(25, -106)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_swltk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_vcexx")
 animation = &"idle"
-frame = 2
+frame = 6
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." groups=["player_kill_detect"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 scale = Vector2(1, 1.2)
 shape = SubResource("CapsuleShape2D_webf6")
 
@@ -442,3 +444,7 @@ parameters/conditions/idle = true
 parameters/conditions/is_falling = false
 parameters/conditions/is_jumping = false
 parameters/conditions/is_running = false
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+scale = Vector2(1, 1.2)
+shape = SubResource("CapsuleShape2D_webf6")

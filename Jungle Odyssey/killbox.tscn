@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dg3tlbistc0c6"]
+
+[ext_resource type="Script" path="res://killbox.gd" id="1_5gkmp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i80x1"]
+size = Vector2(697, 51)
+
+[node name="killbox" type="Node2D" groups=["obstacle"]]
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("1_5gkmp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_i80x1")
+debug_color = Color(0.794631, 0.108662, 0.0952223, 0.42)
+
+[connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]
