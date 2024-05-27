@@ -1,5 +1,6 @@
-extends StaticBody2D
+extends Area2D
 
+@onready var UI = get_tree().get_first_node_in_group('UI')
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -9,3 +10,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+func _on_area_entered(area):
+	if area.is_in_group("player_kill_detect"):
+		UI.damage(1)

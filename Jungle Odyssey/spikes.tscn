@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://balsqfh2q2v31"]
+
+[ext_resource type="Texture2D" uid="uid://csu8dijbu7srv" path="res://Sunnyland/environment/Props/spikes.png" id="1_wuqbg"]
+[ext_resource type="Script" path="res://Spikes.gd" id="2_q84pp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ho2y1"]
+size = Vector2(16, 9)
+
+[node name="Spike" type="Node2D" groups=["obstacle"]]
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("2_q84pp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_ho2y1")
+debug_color = Color(0.997708, 0, 0.159847, 0.42)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_wuqbg")
+
+[connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]
