@@ -1,7 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://b34lyfwxsb32n"]
+[gd_scene load_steps=13 format=3 uid="uid://b34lyfwxsb32n"]
 
 [ext_resource type="Script" path="res://CanvasLayer.gd" id="1_eyge8"]
 [ext_resource type="Texture2D" uid="uid://bpd28kc7sfmma" path="res://heart_animated_1.png" id="2_cj00h"]
+[ext_resource type="AudioStream" uid="uid://dguiah4discyp" path="res://damage-40114.mp3" id="3_wgdw1"]
+[ext_resource type="AudioStream" uid="uid://ckc7suhof3nim" path="res://heart-beats-135876.mp3" id="4_n4vxt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c6yie"]
 atlas = ExtResource("2_cj00h")
@@ -105,5 +107,13 @@ libraries = {
 [node name="QuitTimer" type="Timer" parent="."]
 wait_time = 0.8
 one_shot = true
+
+[node name="damage" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_wgdw1")
+volume_db = 24.0
+
+[node name="lowhealth" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_n4vxt")
+volume_db = 24.0
 
 [connection signal="timeout" from="QuitTimer" to="." method="_on_quit_timer_timeout"]

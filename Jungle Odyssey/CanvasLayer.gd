@@ -17,12 +17,16 @@ func damage(amount):
 		match health:
 			0:
 				$Heart1.play_backwards("health")
+				$damage.play()
 				if $QuitTimer.is_stopped:
 					$QuitTimer.start()
 			1:
 				$Heart2.play_backwards("health")
+				$damage.play()
+				$lowhealth.play()
 			2:
 				$Heart3.play_backwards("health")
+				$damage.play()
 
 func _on_quit_timer_timeout():
 	get_tree().quit()
