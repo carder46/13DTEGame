@@ -11,6 +11,11 @@ func _ready():
 func _process(delta):
 	pass
 
+### pages_collected += 1
+			# collection_tracker.text = "Parts Collected : " + str(pages_collected) + " / 10"
+			# if pages_collected == 10:
+			# 	get_tree().change_scene_to_file("res://WinScene.tscn")
+
 func damage(amount):
 	if health >= amount:
 		health -= amount
@@ -29,4 +34,4 @@ func damage(amount):
 				$damage.play()
 
 func _on_quit_timer_timeout():
-	get_tree().quit()
+	get_tree().change_scene_to_file("res://lose.tscn")

@@ -424,9 +424,9 @@ script = ExtResource("1_swltk")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_vcexx")
 animation = &"idle"
-frame = 2
+frame = 11
 
-[node name="Area2D" type="Area2D" parent="." groups=["player_kill_detect"]]
+[node name="Area2D" type="Area2D" parent="." groups=["player", "player_kill_detect"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 scale = Vector2(1, 1.2)
@@ -452,3 +452,6 @@ parameters/conditions/is_running = false
 position = Vector2(0, 6)
 scale = Vector2(1, 1.2)
 shape = SubResource("RectangleShape2D_u8qq5")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

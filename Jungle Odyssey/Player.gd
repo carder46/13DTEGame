@@ -58,4 +58,5 @@ func set_running(val):
 	animation_tree["parameters/conditions/idle"] = not val
 	animation_tree["parameters/conditions/is_jumping"] = false
 	animation_tree["parameters/conditions/is_falling"] = false
-	
+
+
