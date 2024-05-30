@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dd432xdm8lbhs"]
+[gd_scene load_steps=21 format=3 uid="uid://dd432xdm8lbhs"]
 
 [ext_resource type="Texture2D" uid="uid://bcivr0jmnumic" path="res://Jungle/tileset.png" id="1_ed4jo"]
 [ext_resource type="Script" path="res://World.gd" id="1_fthk1"]
@@ -12,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://balsqfh2q2v31" path="res://spikes.tscn" id="9_ymp4w"]
 [ext_resource type="PackedScene" uid="uid://hodqve1pqt15" path="res://warrior.tscn" id="11_4on5u"]
 [ext_resource type="PackedScene" uid="uid://l4jmado6apfa" path="res://cipher.tscn" id="12_r7tv8"]
+[ext_resource type="PackedScene" uid="uid://7j25ts5pu382" path="res://health_kit.tscn" id="13_nlfnr"]
+[ext_resource type="PackedScene" uid="uid://p0xcoxgblswa" path="res://player.tscn" id="14_wva21"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yntm4"]
 texture = ExtResource("1_ed4jo")
@@ -349,9 +351,14 @@ position = Vector2(238, 381)
 [node name="cipher5" parent="Secondary" instance=ExtResource("12_r7tv8")]
 position = Vector2(74, 505)
 
-[node name="Camera2D" type="Camera2D" parent="Secondary"]
-visible = false
-position = Vector2(-190, -53)
+[node name="HealthKit" parent="." instance=ExtResource("13_nlfnr")]
+position = Vector2(431, 82)
+
+[node name="Player1" parent="." instance=ExtResource("14_wva21")]
+position = Vector2(20, 43)
+
+[node name="Camera2D" type="Camera2D" parent="Player1"]
+position = Vector2(-20, -63)
 limit_left = 0
 limit_top = 0
 limit_bottom = 648

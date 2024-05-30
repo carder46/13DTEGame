@@ -1,5 +1,4 @@
 extends CanvasLayer
-@onready var health = 3
 
 func _ready():
 	#play reverse animation for 3 hearts
@@ -17,9 +16,9 @@ func _process(delta):
 			# 	get_tree().change_scene_to_file("res://WinScene.tscn")
 
 func damage(amount):
-	if health >= amount:
-		health -= amount
-		match health:
+	if GameManager.health >= amount:
+		GameManager.health -= amount
+		match GameManager.health:
 			0:
 				$Heart1.play_backwards("health")
 				$damage.play()
