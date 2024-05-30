@@ -1,12 +1,14 @@
-[gd_scene load_steps=13 format=3 uid="uid://hodqve1pqt15"]
+[gd_scene load_steps=15 format=3 uid="uid://hodqve1pqt15"]
 
+[ext_resource type="Script" path="res://PathFollow2D.gd" id="1_sjn2t"]
 [ext_resource type="Texture2D" uid="uid://dbrvs3pw5x7ba" path="res://TheBaldur_Adventure/Enemies/Warrior/PNGs/WarriorRun.png" id="1_to8gp"]
+[ext_resource type="Script" path="res://warrior.gd" id="2_2ahek"]
 
-[sub_resource type="Curve2D" id="Curve2D_d3ntt"]
+[sub_resource type="Curve2D" id="Curve2D_vysx7"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 24, 2, 0, 0, 0, 0, 44, 2, 0, 0, 0, 0, 45, 2, 0, 0, 0, 0, 74, 2, 0, 0, 0, 0, 24, 2)
+"points": PackedVector2Array(0, 0, 0, 0, 24, 2, 0, 0, 0, 0, 25, 2, 0, 0, 0, 0, 24, 2, 0, 0, 0, 0, 173, 3, 0, 0, 0, 0, 24, 2, 0, 0, 0, 0, 163, 3)
 }
-point_count = 5
+point_count = 6
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kbuv6"]
 atlas = ExtResource("1_to8gp")
@@ -96,13 +98,16 @@ _data = {
 [node name="WarriorMan" type="Node2D"]
 
 [node name="Path2D" type="Path2D" parent="."]
-curve = SubResource("Curve2D_d3ntt")
+position = Vector2(6, 2)
+curve = SubResource("Curve2D_vysx7")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 position = Vector2(24, 2)
 rotates = false
+script = ExtResource("1_sjn2t")
 
 [node name="Area2D" type="Area2D" parent="Path2D/PathFollow2D"]
+script = ExtResource("2_2ahek")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Path2D/PathFollow2D/Area2D"]
 sprite_frames = SubResource("SpriteFrames_yjmj1")
@@ -117,3 +122,5 @@ libraries = {
 "": SubResource("AnimationLibrary_mqp7k")
 }
 autoplay = "default"
+
+[connection signal="area_entered" from="Path2D/PathFollow2D/Area2D" to="Path2D/PathFollow2D" method="_on_area_2d_area_entered"]

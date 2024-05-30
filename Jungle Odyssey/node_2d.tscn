@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dd432xdm8lbhs"]
+[gd_scene load_steps=15 format=3 uid="uid://dd432xdm8lbhs"]
 
 [ext_resource type="Texture2D" uid="uid://bcivr0jmnumic" path="res://Jungle/tileset.png" id="1_ed4jo"]
 [ext_resource type="PackedScene" uid="uid://p0xcoxgblswa" path="res://player.tscn" id="2_sbhbp"]
@@ -178,6 +178,12 @@ terrain_set_0/terrain_0/name = "Grass"
 terrain_set_0/terrain_0/color = Color(0.945368, 8.66354e-07, 0.489756, 1)
 sources/1 = SubResource("TileSetAtlasSource_yntm4")
 
+[sub_resource type="Curve2D" id="Curve2D_2bgdi"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 24, 2, 0, 0, 0, 0, 25, 2, 0, 0, 0, 0, 24, 2, 0, 0, 0, 0, 24, 2, 0, 0, 0, 0, 135, 2, 0, 0, 0, 0, 24, 2)
+}
+point_count = 6
+
 [node name="World" type="Node2D"]
 position = Vector2(213, 43)
 
@@ -252,9 +258,6 @@ position = Vector2(1031, 629)
 stream = ExtResource("8_j82qi")
 autoplay = true
 
-[node name="Node2D" parent="." instance=ExtResource("11_4on5u")]
-position = Vector2(539, 211)
-
 [node name="Spike" parent="." instance=ExtResource("9_ymp4w")]
 position = Vector2(550, 398)
 
@@ -290,3 +293,15 @@ position = Vector2(1026, 522)
 
 [node name="Spike12" parent="." instance=ExtResource("9_ymp4w")]
 position = Vector2(673, 336)
+
+[node name="WarriorMan" parent="." instance=ExtResource("11_4on5u")]
+position = Vector2(98, 538)
+
+[node name="WarriorMan2" parent="." instance=ExtResource("11_4on5u")]
+position = Vector2(335, 460)
+
+[node name="Path2D" parent="WarriorMan2" index="0"]
+curve = SubResource("Curve2D_2bgdi")
+
+[editable path="WarriorMan"]
+[editable path="WarriorMan2"]
