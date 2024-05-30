@@ -1,12 +1,5 @@
 extends Area2D
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+@onready var UI = get_tree().get_first_node_in_group('UI')
 
 func collected():
 	var vanish = preload("res://vanish.tscn")
@@ -23,5 +16,5 @@ func _on_area_entered(area):
 		queue_free()
 		GameManager.health += 1
 		print(GameManager.health)
-		
+		UI.health(1)
 

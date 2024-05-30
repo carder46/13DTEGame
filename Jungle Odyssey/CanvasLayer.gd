@@ -7,9 +7,6 @@ func _ready():
 	$Heart3.play("health")
 
 
-func _process(delta):
-	pass
-
 ### pages_collected += 1
 			# collection_tracker.text = "Parts Collected : " + str(pages_collected) + " / 10"
 			# if pages_collected == 10:
@@ -34,3 +31,15 @@ func damage(amount):
 
 func _on_quit_timer_timeout():
 	get_tree().change_scene_to_file("res://lose.tscn")
+
+func health(amount):
+	GameManager.health -= amount
+	if GameManager.health > 3:
+		GameManager.health = 3
+	match GameManager.health:
+		1:
+			$Heart2.play("health")
+		2:
+			$Heart3.play("health")
+		3:
+			return

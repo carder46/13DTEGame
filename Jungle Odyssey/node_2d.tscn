@@ -352,7 +352,7 @@ position = Vector2(238, 381)
 position = Vector2(74, 505)
 
 [node name="HealthKit" parent="." instance=ExtResource("13_nlfnr")]
-position = Vector2(431, 82)
+position = Vector2(527, 57)
 
 [node name="Player1" parent="." instance=ExtResource("14_wva21")]
 position = Vector2(20, 43)
@@ -364,6 +364,9 @@ limit_top = 0
 limit_bottom = 648
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
+
+[node name="HealthKit2" parent="." instance=ExtResource("13_nlfnr")]
+position = Vector2(395, 522)
 
 [editable path="Secondary/WarriorMan"]
 [editable path="Secondary/WarriorMan2"]

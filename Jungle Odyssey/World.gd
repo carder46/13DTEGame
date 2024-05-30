@@ -12,7 +12,4 @@ func _ready():
 	elif GameManager.PlayerSelect == 2:
 		print("IT WORKS!!!")
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
 

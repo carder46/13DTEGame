@@ -8,6 +8,7 @@
 [node name="HealthKit" type="Node2D"]
 
 [node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(0.559999, 0.559999)
 script = ExtResource("1_ahkev")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
