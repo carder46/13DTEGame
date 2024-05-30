@@ -418,13 +418,12 @@ graph_offset = Vector2(25, -106)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u8qq5"]
 size = Vector2(11, 18.3333)
 
-[node name="Player" type="CharacterBody2D" groups=["player"]]
+[node name="Player1" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_swltk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_vcexx")
 animation = &"idle"
-frame = 11
 
 [node name="Area2D" type="Area2D" parent="." groups=["player", "player_kill_detect"]]
 
