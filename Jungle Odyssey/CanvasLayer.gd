@@ -31,9 +31,14 @@ func damage(amount):
 
 func _on_quit_timer_timeout():
 	get_tree().change_scene_to_file("res://lose.tscn")
-
-func health(amount):
-	GameManager.health -= amount
+	
+func add_health(amount):
+	update_ui()
+	GameManager.health+=amount
+	
+	
+func update_ui():
+	print("usdfsahfsdjkf")
 	if GameManager.health > 3:
 		GameManager.health = 3
 	match GameManager.health:
@@ -43,3 +48,6 @@ func health(amount):
 			$Heart3.play("health")
 		3:
 			return
+			
+
+	

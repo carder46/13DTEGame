@@ -9,12 +9,11 @@ func collected():
 
 
 func _on_area_entered(area):
-	if GameManager.health == 3:
-		return
 	if area.is_in_group("player"):
-		collected()
-		queue_free()
-		GameManager.health += 1
-		print(GameManager.health)
-		UI.health(1)
+		if GameManager.health != 3:
+			collected()
+			queue_free()
+			UI.add_health(1)
+			print(GameManager.health)
+			#UI.health(1)
 

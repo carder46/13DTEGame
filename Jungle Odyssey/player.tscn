@@ -424,7 +424,7 @@ script = ExtResource("1_swltk")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_vcexx")
 animation = &"idle"
-frame = 7
+frame = 1
 
 [node name="Area2D" type="Area2D" parent="." groups=["player", "player_kill_detect"]]
 
@@ -452,6 +452,14 @@ parameters/conditions/is_running = false
 position = Vector2(0, 6)
 scale = Vector2(1, 1.2)
 shape = SubResource("RectangleShape2D_u8qq5")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-20, -63)
+limit_left = 0
+limit_top = 0
+limit_bottom = 648
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
