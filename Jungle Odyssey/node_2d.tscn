@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cl15bbt0iq0xa" path="res://background/j2.png" id="5_ieg6i"]
 [ext_resource type="Texture2D" uid="uid://ds0c8b72pfm3f" path="res://background/j1.png" id="6_ytr5x"]
 [ext_resource type="PackedScene" uid="uid://dg3tlbistc0c6" path="res://killbox.tscn" id="7_wl6mp"]
-[ext_resource type="AudioStream" uid="uid://dqtodxo0f73or" path="res://Upbeat Jungle Music For Media  Cheerful Tribal Theme.mp3" id="8_j82qi"]
+[ext_resource type="AudioStream" uid="uid://irv4ju3x5c7a" path="res://Ghouliez Love.mp3" id="9_x3rqp"]
 [ext_resource type="PackedScene" uid="uid://balsqfh2q2v31" path="res://spikes.tscn" id="9_ymp4w"]
 [ext_resource type="PackedScene" uid="uid://hodqve1pqt15" path="res://warrior.tscn" id="11_4on5u"]
 [ext_resource type="PackedScene" uid="uid://l4jmado6apfa" path="res://cipher.tscn" id="12_r7tv8"]
@@ -268,8 +268,7 @@ stretch_mode = 1
 position = Vector2(1031, 629)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Secondary"]
-visible = false
-stream = ExtResource("8_j82qi")
+stream = ExtResource("9_x3rqp")
 autoplay = true
 
 [node name="Spike" parent="Secondary" instance=ExtResource("9_ymp4w")]

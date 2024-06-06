@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://irv4ju3x5c7a"
+path="res://.godot/imported/Ghouliez Love.mp3-f72323015e08594786649d4091216ffb.mp3str"
+
+[deps]
+
+source_file="res://Ghouliez Love.mp3"
+dest_files=["res://.godot/imported/Ghouliez Love.mp3-f72323015e08594786649d4091216ffb.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
