@@ -424,7 +424,7 @@ script = ExtResource("1_swltk")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_vcexx")
 animation = &"idle"
-frame = 3
+frame = 7
 
 [node name="Area2D" type="Area2D" parent="." groups=["player", "player_kill_detect"]]
 

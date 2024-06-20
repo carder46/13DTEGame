@@ -5,6 +5,7 @@ func _ready():
 	$Heart1.play("health")
 	$Heart2.play("health")
 	$Heart3.play("health")
+	$AnimationPlayer.play("RESET")
 
 
 ### pages_collected += 1
@@ -20,6 +21,8 @@ func damage(amount):
 				$Heart1.play_backwards("health")
 				$damage.play()
 				if $QuitTimer.is_stopped:
+					get_tree().paused = true
+					$AnimationPlayer.play("fade")
 					$QuitTimer.start()
 			1:
 				$Heart2.play_backwards("health")
@@ -35,6 +38,7 @@ func _on_quit_timer_timeout():
 func add_health(amount):
 	update_ui()
 	GameManager.health+=amount
+	
 	
 	
 func update_ui():

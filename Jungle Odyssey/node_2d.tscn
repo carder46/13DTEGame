@@ -263,6 +263,7 @@ texture = ExtResource("6_ytr5x")
 stretch_mode = 1
 
 [node name="CanvasLayer" parent="Secondary" instance=ExtResource("2_yrjvx")]
+process_mode = 3
 
 [node name="killbox" parent="Secondary" instance=ExtResource("7_wl6mp")]
 position = Vector2(1031, 629)
