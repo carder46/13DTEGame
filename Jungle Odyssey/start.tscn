@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://dp0gqp6psu0t8"]
+[gd_scene load_steps=5 format=3 uid="uid://dp0gqp6psu0t8"]
 
 [ext_resource type="Script" path="res://start.gd" id="1_drrsc"]
-[ext_resource type="Texture2D" uid="uid://cha5ygbl4qnun" path="res://00006-3447315571.png" id="2_x13xj"]
 [ext_resource type="Texture2D" uid="uid://dmwqb76xejg24" path="res://00000-1226658343.png" id="3_6wxb5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hrl0h"]
@@ -22,11 +21,6 @@ offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_drrsc")
-
-[node name="background" type="Sprite2D" parent="."]
-position = Vector2(585.5, 342.499)
-scale = Vector2(1.62109, 1.32227)
-texture = ExtResource("2_x13xj")
 
 [node name="00000-1226658343" type="Sprite2D" parent="."]
 position = Vector2(585, 294)

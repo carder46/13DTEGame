@@ -38,8 +38,10 @@ func _on_quit_timer_timeout():
 func add_health(amount):
 	update_ui()
 	GameManager.health+=amount
-	
-	
+
+func win():
+	if GameManager.cipher_count == 5:
+		$AnimationPlayer.play("fade")
 	
 func update_ui():
 	print("usdfsahfsdjkf")
