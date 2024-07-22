@@ -19,6 +19,4 @@ func _on_area_entered(area):
 		queue_free()
 		GameManager.cipher_count += 1
 		print(GameManager.cipher_count)
-	if GameManager.cipher_count == 5:
-		get_tree().change_scene_to_file("res://win.tscn")
 

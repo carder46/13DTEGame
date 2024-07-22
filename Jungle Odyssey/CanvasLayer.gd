@@ -40,7 +40,7 @@ func add_health(amount):
 	GameManager.health+=amount
 
 func win():
-	if GameManager.cipher_count == 5:
+	if GameManager.cipher_count == 10:
 		if $QuitTimer.is_stopped:
 				get_tree().paused = true
 				$AnimationPlayer.play("fade")

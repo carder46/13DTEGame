@@ -1,4 +1,13 @@
-[gd_scene format=3 uid="uid://dplhjmiu27rfx"]
+[gd_scene load_steps=5 format=3 uid="uid://dplhjmiu27rfx"]
+
+[ext_resource type="Script" path="res://start.gd" id="1_5pllv"]
+[ext_resource type="Texture2D" uid="uid://dmwqb76xejg24" path="res://00000-1226658343.png" id="2_ntq84"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hrl0h"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pk6io"]
+bg_color = Color(1, 1, 1, 1)
 
 [node name="LOSE" type="Control"]
 layout_mode = 3
@@ -8,10 +17,53 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 390.0
-offset_top = 286.0
-offset_right = 1472.0
-offset_bottom = 875.0
-text = "YOU'VE LOST :c"
+[node name="MainMenu" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -4.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5pllv")
+
+[node name="00000-1226658343" type="Sprite2D" parent="MainMenu"]
+position = Vector2(585, 294)
+scale = Vector2(1.5472, 1.45703)
+texture = ExtResource("2_ntq84")
+
+[node name="MarginContainer" type="MarginContainer" parent="MainMenu"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 57.0
+offset_top = -100.0
+offset_right = 196.0
+offset_bottom = -34.0
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/MarginContainer"]
+layout_mode = 2
+
+[node name="Return" type="Button" parent="MainMenu/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_hrl0h")
+text = "          RETURN          "
+
+[node name="Quit" type="Button" parent="MainMenu/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_pk6io")
+text = "QUIT"
+
+[connection signal="pressed" from="MainMenu/MarginContainer/VBoxContainer/Return" to="MainMenu" method="_on_return_pressed"]
+[connection signal="pressed" from="MainMenu/MarginContainer/VBoxContainer/Quit" to="MainMenu" method="_on_quit_pressed"]
