@@ -33,6 +33,7 @@ func damage(amount):
 				$damage.play()
 
 func _on_quit_timer_timeout():
+	get_tree().paused = false
 	get_tree().change_scene_to_file("res://lose.tscn")
 	
 func add_health(amount):
