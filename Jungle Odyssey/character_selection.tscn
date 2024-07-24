@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bp264gsmrgs4i"]
+[gd_scene load_steps=3 format=3 uid="uid://bp264gsmrgs4i"]
 
 [ext_resource type="Script" path="res://character_selection.gd" id="1_4nd5v"]
+[ext_resource type="Texture2D" uid="uid://rruaas6amxal" path="res://coming-soon.webp" id="2_rgoi6"]
 
 [node name="CharacterSelection" type="Control"]
 layout_mode = 3
@@ -37,6 +38,11 @@ text = "PLAYER
 layout_mode = 2
 text = "PLAYER
           B       "
+
+[node name="Coming-soon" type="Sprite2D" parent="."]
+position = Vector2(576, 353)
+scale = Vector2(0.0719843, 0.0719843)
+texture = ExtResource("2_rgoi6")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/PLAYER_1" to="." method="_on_player_1_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/PLAYER_2" to="." method="_on_player_2_pressed"]

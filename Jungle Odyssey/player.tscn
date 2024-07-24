@@ -425,7 +425,7 @@ script = ExtResource("1_swltk")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_vcexx")
 animation = &"idle"
-frame = 3
+frame = 11
 
 [node name="Area2D" type="Area2D" parent="." groups=["player", "player_kill_detect"]]
 
@@ -456,7 +456,7 @@ shape = SubResource("RectangleShape2D_u8qq5")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-20, -63)
-zoom = Vector2(2, 2)
+zoom = Vector2(1.5, 1.5)
 limit_left = 0
 limit_top = 0
 limit_bottom = 648
