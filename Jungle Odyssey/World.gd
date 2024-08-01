@@ -11,6 +11,3 @@ func _ready():
 		new_Player.global_position = global_position
 	elif GameManager.PlayerSelect == 2:
 		print("IT WORKS!!!")
-
-
-
