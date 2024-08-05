@@ -10,7 +10,7 @@ func _process(delta):
 	pass
 
 func _on_player_1_pressed():
-	get_tree().change_scene_to_file("res://node_2d.tscn")
+	get_tree().change_scene_to_file("res://tutorial.tscn")
 	GameManager.PlayerSelect = 1
 
 
