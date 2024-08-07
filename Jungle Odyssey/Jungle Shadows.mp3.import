@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cv1as47xiehh"
+path="res://.godot/imported/Jungle Shadows.mp3-b33c9610249ec5baa86d0154c4c0c66f.mp3str"
+
+[deps]
+
+source_file="res://Jungle Shadows.mp3"
+dest_files=["res://.godot/imported/Jungle Shadows.mp3-b33c9610249ec5baa86d0154c4c0c66f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,13 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://dp0gqp6psu0t8"]
+[gd_scene load_steps=7 format=3 uid="uid://dp0gqp6psu0t8"]
 
 [ext_resource type="Script" path="res://start.gd" id="1_drrsc"]
 [ext_resource type="Texture2D" uid="uid://dmwqb76xejg24" path="res://00000-1226658343.png" id="3_6wxb5"]
+[ext_resource type="AudioStream" uid="uid://cv1as47xiehh" path="res://Jungle Shadows.mp3" id="3_sibch"]
+[ext_resource type="FontFile" uid="uid://ep6gin4fueln" path="res://Kambium-rvx4y.otf" id="3_y3e48"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hrl0h"]
 bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pk6io"]
 bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -45,7 +55,8 @@ layout_mode = 2
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 25
+theme_override_fonts/font = ExtResource("3_y3e48")
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_hrl0h")
 text = "          START          "
 
@@ -53,9 +64,14 @@ text = "          START          "
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 25
+theme_override_fonts/font = ExtResource("3_y3e48")
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_pk6io")
 text = "QUIT"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_sibch")
+autoplay = true
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

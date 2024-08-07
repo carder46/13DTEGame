@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dqiux3ou3ywsc"]
+
+[ext_resource type="Script" path="res://jumpscare.gd" id="1_0eajj"]
+[ext_resource type="Texture2D" uid="uid://b2txkcbfe0kfd" path="res://david.PNG" id="2_fb53m"]
+[ext_resource type="AudioStream" uid="uid://dfeau4y7yxoxy" path="res://Scary Sound Effects (Horror Scream).mp3" id="3_8f724"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y5y71"]
+
+[node name="Jumpscare" type="Node2D"]
+script = ExtResource("1_0eajj")
+
+[node name="Picture" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(576.5, 321.5)
+scale = Vector2(4.46816, 1.96765)
+texture = ExtResource("2_fb53m")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_8f724")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_y5y71")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -7,6 +7,7 @@ func _ready():
 	$Heart3.play("health")
 	$AnimationPlayer.play("RESET")
 	GameManager.cipher_count = 0
+	GameManager.health = 3
 
 
 ### pages_collected += 1

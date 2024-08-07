@@ -1,13 +1,22 @@
-[gd_scene load_steps=5 format=3 uid="uid://dyjg1gym2mhwm"]
+[gd_scene load_steps=6 format=3 uid="uid://dyjg1gym2mhwm"]
 
 [ext_resource type="Script" path="res://start.gd" id="1_pe0t3"]
 [ext_resource type="Texture2D" uid="uid://citcwphq7cnho" path="res://00005-1154414488.png" id="2_gafeq"]
+[ext_resource type="FontFile" uid="uid://ep6gin4fueln" path="res://Kambium-rvx4y.otf" id="3_xele5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q4123"]
 bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ayit2"]
 bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [node name="WIN" type="Control"]
 layout_mode = 3
@@ -53,7 +62,8 @@ layout_mode = 2
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 25
+theme_override_fonts/font = ExtResource("3_xele5")
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_q4123")
 text = "          RETURN          "
 
@@ -61,7 +71,8 @@ text = "          RETURN          "
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 25
+theme_override_fonts/font = ExtResource("3_xele5")
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_ayit2")
 text = "QUIT"
 
