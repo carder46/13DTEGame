@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://dd432xdm8lbhs"]
+[gd_scene load_steps=36 format=3 uid="uid://dd432xdm8lbhs"]
 
 [ext_resource type="Texture2D" uid="uid://bcivr0jmnumic" path="res://Jungle/tileset.png" id="1_ed4jo"]
 [ext_resource type="Script" path="res://World.gd" id="1_fthk1"]
@@ -17,6 +17,7 @@
 [ext_resource type="AudioStream" uid="uid://irv4ju3x5c7a" path="res://Ghouliez Love.mp3" id="13_8g2xi"]
 [ext_resource type="PackedScene" uid="uid://7j25ts5pu382" path="res://health_kit.tscn" id="13_nlfnr"]
 [ext_resource type="Texture2D" uid="uid://o32hgko6xmcc" path="res://goodluck.png" id="17_nit1b"]
+[ext_resource type="PackedScene" uid="uid://dqiux3ou3ywsc" path="res://jumpscare.tscn" id="18_f4rda"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yntm4"]
 texture = ExtResource("1_ed4jo")
@@ -525,6 +526,9 @@ max_distance = 2e+07
 position = Vector2(25, 20)
 scale = Vector2(0.119141, 0.119141)
 texture = ExtResource("17_nit1b")
+
+[node name="Jumpscare" parent="." instance=ExtResource("18_f4rda")]
+position = Vector2(351, 197)
 
 [connection signal="area_entered" from="Secondary/WarriorMan/Path2D/PathFollow2D/Area2D" to="Secondary/WarriorMan/Path2D/PathFollow2D" method="_on_area_2d_area_entered"]
 
