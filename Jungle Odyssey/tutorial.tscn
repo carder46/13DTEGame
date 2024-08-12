@@ -1184,7 +1184,6 @@ script = ExtResource("18_ju2or")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player1"]
 sprite_frames = SubResource("SpriteFrames_vcexx")
 animation = &"idle"
-frame = 2
 
 [node name="Area2D" type="Area2D" parent="Player1" groups=["player", "player_kill_detect"]]
 

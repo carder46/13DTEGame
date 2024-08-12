@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://jumpscare.gd" id="1_0eajj"]
 [ext_resource type="Texture2D" uid="uid://b2txkcbfe0kfd" path="res://david.PNG" id="2_fb53m"]
-[ext_resource type="AudioStream" uid="uid://dfeau4y7yxoxy" path="res://Scary Sound Effects (Horror Scream).mp3" id="3_8f724"]
+[ext_resource type="AudioStream" uid="uid://cajbipema45jy" path="res://GO AWAY meme-[AudioTrimmer.com].mp3" id="3_j1xr8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y5y71"]
 size = Vector2(104, 140)
@@ -20,10 +20,11 @@ scale = Vector2(4.46816, 1.96765)
 texture = ExtResource("2_fb53m")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_8f724")
+stream = ExtResource("3_j1xr8")
 volume_db = 24.0
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
 one_shot = true
 
 [node name="Area2D" type="Area2D" parent="."]
