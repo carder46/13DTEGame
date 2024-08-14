@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cklpigyg51t0s"]
+
+[ext_resource type="Script" path="res://StaticBody2D.gd" id="1_t4rqa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iumej"]
+size = Vector2(16, 94)
+
+[node name="ladder" type="Node2D"]
+
+[node name="StaticBody2D" type="Area2D" parent="."]
+script = ExtResource("1_t4rqa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 37)
+shape = SubResource("RectangleShape2D_iumej")
+
+[connection signal="body_entered" from="StaticBody2D" to="StaticBody2D" method="_on_body_entered"]
+[connection signal="body_exited" from="StaticBody2D" to="StaticBody2D" method="_on_body_exited"]

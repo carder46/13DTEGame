@@ -8,6 +8,7 @@
 size = Vector2(104, 140)
 
 [node name="Jumpscare" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_0eajj")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

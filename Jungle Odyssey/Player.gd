@@ -20,8 +20,9 @@ func set_jumping(val):
 
 func _physics_process(delta):
 	# Add the gravity.
-	if not is_on_floor():
+	if not is_on_floor() and !GameManager.on_ladder:
 		velocity.y += gravity * delta
+	
 
 	# Handle jump.
 	if Input.is_action_just_pressed("Up") and is_on_floor():
@@ -45,6 +46,15 @@ func _physics_process(delta):
 	elif velocity.y > 0:
 		set_jumping(false)	
 
+
+	if GameManager.on_ladder:
+		if Input.is_action_pressed("Down"):
+			velocity.y = SPEED*delta*10
+		elif Input.is_action_pressed("Up"):
+			velocity.y = -SPEED*delta*10
+		else:
+			velocity.y = 0
+
 	move_and_slide()
 
 func _process(delta):
@@ -52,6 +62,7 @@ func _process(delta):
 		$AnimatedSprite2D.flip_h = false
 	elif Input.is_action_pressed("Left"):
 		$AnimatedSprite2D.flip_h = true
+	var velocity = Vector2.ZERO
 
 func set_running(val):
 	animation_tree["parameters/conditions/is_running"] = val

@@ -13,10 +13,12 @@ func _trigger_jumpscare():
 	$Timer.start()
 	# Play the scream sound
 	scream.play()
+	get_tree().paused = true
 
 func _on_timer_timeout():
 	picture.visible = false
 	scream.stop()
+	get_tree().paused = false
 
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("player"):  # Make sure to add your player to the "player" group
