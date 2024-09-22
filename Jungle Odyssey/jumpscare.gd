@@ -1,23 +1,28 @@
 extends Node2D
 
 @onready var picture = %Picture
-@onready var scream = $AudioStreamPlayer2D
+@onready var slip = $AudioStreamPlayer2D
+@onready var getout = $"GETOUT!"
+
 func _ready():
 	# Ensure the picture and sound are hidden/paused initially
 	picture.visible = false
-	scream.stop()
+	slip.stop()
+	getout.stop()
 
 func _trigger_jumpscare():
 	# Show the scary picture
 	picture.visible = true
 	$Timer.start()
 	# Play the scream sound
-	scream.play()
+	slip.play()
+	getout.play()
 	get_tree().paused = true
 
 func _on_timer_timeout():
 	picture.visible = false
-	scream.stop()
+	slip.stop()
+	getout.stop()
 	get_tree().paused = false
 
 func _on_area_2d_body_entered(body):

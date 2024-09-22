@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://StaticBody2D.gd" id="1_t4rqa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iumej"]
-size = Vector2(16, 94)
+size = Vector2(12, 106)
 
 [node name="ladder" type="Node2D"]
 

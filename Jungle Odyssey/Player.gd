@@ -27,7 +27,6 @@ func _physics_process(delta):
 	# Handle jump.
 	if Input.is_action_just_pressed("Up") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-		
 
 	
 	var direction = Input.get_axis("Left", "Right")
@@ -57,12 +56,24 @@ func _physics_process(delta):
 
 	move_and_slide()
 
+
 func _process(delta):
 	if Input.is_action_pressed("Right"):
 		$AnimatedSprite2D.flip_h = false
 	elif Input.is_action_pressed("Left"):
 		$AnimatedSprite2D.flip_h = true
 	var velocity = Vector2.ZERO
+	
+	if Input.is_action_just_pressed("Restart"):
+		set_process(false)
+		set_physics_process(false)
+		hide()
+		if $ResetTimer.is_stopped():
+			var reset = preload("res://reset.tscn")
+			var new_reset_object = reset.instantiate()
+			get_tree().current_scene.add_child(new_reset_object)
+			new_reset_object.global_position = global_position
+			$ResetTimer.start()
 
 func set_running(val):
 	animation_tree["parameters/conditions/is_running"] = val
@@ -71,3 +82,5 @@ func set_running(val):
 	animation_tree["parameters/conditions/is_falling"] = false
 
 
+func _on_reset_timer_timeout():
+	get_tree().reload_current_scene()

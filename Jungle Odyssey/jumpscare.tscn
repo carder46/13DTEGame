@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dqiux3ou3ywsc"]
+[gd_scene load_steps=6 format=3 uid="uid://dqiux3ou3ywsc"]
 
 [ext_resource type="Script" path="res://jumpscare.gd" id="1_0eajj"]
 [ext_resource type="Texture2D" uid="uid://b2txkcbfe0kfd" path="res://david.PNG" id="2_fb53m"]
-[ext_resource type="AudioStream" uid="uid://cajbipema45jy" path="res://GO AWAY meme-[AudioTrimmer.com].mp3" id="3_j1xr8"]
+[ext_resource type="AudioStream" uid="uid://cgv6tnykna2ai" path="res://Goofy Running Sound Effect.mp3" id="3_73do8"]
+[ext_resource type="AudioStream" uid="uid://0d2j1v751maq" path="res://Get Out Sound Effect - High Quality.mp3" id="4_uux3a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y5y71"]
 size = Vector2(104, 140)
@@ -21,7 +22,7 @@ scale = Vector2(4.46816, 1.96765)
 texture = ExtResource("2_fb53m")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_j1xr8")
+stream = ExtResource("3_73do8")
 volume_db = 24.0
 
 [node name="Timer" type="Timer" parent="."]
@@ -33,6 +34,10 @@ one_shot = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(42, 60)
 shape = SubResource("RectangleShape2D_y5y71")
+
+[node name="GETOUT!" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_uux3a")
+volume_db = 24.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

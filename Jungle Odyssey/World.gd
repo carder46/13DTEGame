@@ -12,6 +12,5 @@ func _ready():
 	elif GameManager.PlayerSelect == 2:
 		print("IT WORKS!!!")
 
-
 func _on_skip_tutorial_pressed():
 	get_tree().change_scene_to_file("res://node_2d.tscn")

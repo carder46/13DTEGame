@@ -16,4 +16,3 @@ func _on_area_entered(area):
 			UI.add_health(1)
 			print(GameManager.health)
 			#UI.health(1)
-

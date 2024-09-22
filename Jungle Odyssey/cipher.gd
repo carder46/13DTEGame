@@ -19,4 +19,3 @@ func _on_area_entered(area):
 		queue_free()
 		GameManager.cipher_count += 1
 		print(GameManager.cipher_count)
-

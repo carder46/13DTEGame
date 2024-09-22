@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://0d2j1v751maq"
+path="res://.godot/imported/Get Out Sound Effect - High Quality.mp3-1bfa10edef875a49d4297d270d53d1f1.mp3str"
+
+[deps]
+
+source_file="res://Get Out Sound Effect - High Quality.mp3"
+dest_files=["res://.godot/imported/Get Out Sound Effect - High Quality.mp3-1bfa10edef875a49d4297d270d53d1f1.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
